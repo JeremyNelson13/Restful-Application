@@ -4,7 +4,9 @@ This is a Restful application designed to allow users to do some basic
 functions to data.
 ## Technology used
 - Express 
-- Dotenv [add rest as needed]
+- React
+- Express-React-Views
+- Dotenv 
 - Routes tested with Postman
 
 ## Routes Table
