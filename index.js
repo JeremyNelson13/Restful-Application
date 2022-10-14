@@ -5,6 +5,9 @@ require('dotenv').config()
 // Declare app variable and assign it to express
 const app = express()
 
+// Imports controller from route-controller.js
+app.use('/route-controller', require('./controllers/route-controller'))
+
 // Declares port variable, assigns it value from .env file 
 port = process.env.PORT
 
