@@ -1,13 +1,14 @@
 
 # Game-Rater
 This is a Restful application designed to allow users to do some basic 
-functions to data. It is based off of a project from my NCSU bootcamp. 
+functions to data. It is based off of a project from my NCSU bootcamp called Rest-Rant. 
 
 ## Technology used
 - Express 
 - React
 - Express-React-Views
 - React-Dom
+- Bootstrap
 - Dotenv 
 - Routes tested with Postman
 
