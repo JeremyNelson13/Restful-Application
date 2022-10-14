@@ -1,20 +1,23 @@
 const React = require('react')
 const Def = require('../defaultView.jsx')
 
-function index (data) {
+function index(data) {
     const mappedGames = data.games.map((game) => {
         return (
             <div className="games-map">
                 <div><h2>{game.title}</h2></div>
-                <img src={game.boxArt} alt={game.title}/>    
+                <img src={game.boxArt} alt={game.title} />
             </div>
         )
     })
-    return(
+    return (
         <Def>
             <main>
                 <h1>Welcome to The Index Stub!</h1>
                 {mappedGames}
+                <a href="/">
+                    <button className="btn-primary">Return to Landing</button>
+                </a>
             </main>
         </Def>
     )

@@ -8,7 +8,7 @@ const app = express()
 // Sets view engine for jsx/express-react-views
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
-
+app.use(express.static('public'))
 // Imports controller from route-controller.js
 app.use('/index', require('./controllers/index'))
 
