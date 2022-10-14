@@ -6,6 +6,7 @@ functions to data.
 - Express 
 - React
 - Express-React-Views
+- React-Dom
 - Dotenv 
 - Routes tested with Postman
 
@@ -23,3 +24,12 @@ functions to data.
 | POST | /index/:id/comment | Create comment about specific entry |
 | DELETE | /index/:id/comment/:commentId | Delete a comment by id |
 | GET | * | Wildcard route. 404 page will match any undefined route |
+
+## Data Structure
+| Field Name | Data Type |
+|---|---|
+| Title | string |
+| Genre | string |
+| Console | string |
+| Release Date | integer |
+| Box Art | string(URL) |

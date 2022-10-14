@@ -2,7 +2,8 @@ const router = require('express').Router()
 
 // Index GET route
 router.get('/', (req, res) => {
-    res.status(200).send('GET /index')
+    let games = []
+    res.status(200).render('pages/index')
 })
 
 

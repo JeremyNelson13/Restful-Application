@@ -28,5 +28,5 @@ app.get('*', (req, res)=>{
 
 // Calls listen method to turn on server and report back if it is running.
 app.listen(port, (req, res) =>{
-    console.log("now listening on port")
+    console.log(`now listening on port ${port}`)
 })
