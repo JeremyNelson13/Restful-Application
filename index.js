@@ -5,6 +5,10 @@ require('dotenv').config()
 // Declare app variable and assign it to express
 const app = express()
 
+// Sets view engine for jsx/express-react-views
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 // Imports controller from route-controller.js
 app.use('/index', require('./controllers/index'))
 
@@ -13,12 +17,12 @@ port = process.env.PORT
 
 // Home route. This determines the behavior of the URL's default route.
 app.get('/', (req, res) => {
-    res.send('Hello, Welcome to an express server')
+    res.render('home')
 })
 
 // Wildcard route will allow us to show a 404/error page.
 app.get('*', (req, res)=>{
-    res.status(404).send(`<h1>404 Page</h1>`)
+    res.status(404).render('errorPage')
 })
 
 
