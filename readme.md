@@ -31,5 +31,5 @@ functions to data.
 | Title | string |
 | Genre | string |
 | Console | string |
-| Release Date | integer |
+| Release Date | string (for convenience's sake these will store as strings) |
 | Box Art | string(URL) |
