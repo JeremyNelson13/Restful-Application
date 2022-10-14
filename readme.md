@@ -1,7 +1,8 @@
 
-# Rest-Rate
+# Game-Rater
 This is a Restful application designed to allow users to do some basic 
-functions to data.
+functions to data. It is based off of a project from my NCSU bootcamp. 
+
 ## Technology used
 - Express 
 - React
