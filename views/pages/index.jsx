@@ -18,11 +18,8 @@ function index(data) {
     return (
         <Def>
             <main>
-                <h1>Welcome to The Index Stub!</h1>
+                <h1>Games Index</h1>
                 <div className='row'>{mappedGames}</div>
-                <a href="/">
-                    <button className="btn-primary">Return to Landing</button>
-                </a>
             </main>
         </Def>
     )

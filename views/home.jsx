@@ -8,14 +8,11 @@ function home() {
     return (
         <Def>
             <main>
-                <h1>Welcome to The Landing Page</h1>
+                <h1>Welcome to the Game Room!</h1>
                 <div className='home-image'>
                     <img src='/images/monitor-image.jpg' alt='a computer monitor on a desk' />
                    
                 </div>
-                <a href="/index">
-                    <button className="btn-primary">Index Page</button>
-                </a>
                 <footer> <a className='author-link' href='https://unsplash.com/photos/TQYTWfN1b7M?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink'>photo by Clay Banks</a></footer>
             </main>
         </Def>
