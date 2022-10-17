@@ -6,7 +6,7 @@ function addGame () {
         <Def>
             <main>
                 <h1>Add a Game</h1>
-                <form action="/index" method="POST">
+                <form action="/games" method="POST">
                     <div className="form-group">
                         <label htmlFor="title">Game Title</label>
                         <input type="text" className="form-control" id="title" name="title" placeholder="Enter Game Name" required/>

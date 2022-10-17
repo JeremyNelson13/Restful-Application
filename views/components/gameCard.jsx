@@ -12,7 +12,7 @@ function gameCard (props) {
                 <p className='card-text'>{props.platform}</p>
                 <p className='card-text'>{props.rating}</p>
                 <p className='card-text'>{props.releaseDate}</p>
-                <a href={`/index/${props.index}`} className='btn btn-primary'>View Game</a>
+                <a href={`/games/${props.id}`} className='btn btn-primary'>View Game</a>
             </div>
         </div>
     )

@@ -12,7 +12,7 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
 // Imports controller from route-controller.js
-app.use('/index', require('./controllers/index'))
+app.use('/games', require('./controllers/games'))
 
 // Declares port variable, assigns it value from .env file 
 port = process.env.PORT

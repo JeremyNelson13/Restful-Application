@@ -25,10 +25,10 @@ const gameCard = require('../components/gameCard.jsx')
 //     )
 // }
 function index(data) {
-    const mappedGames = data.games.map((game, index) => {
+    const mappedGames = data.games.map((game, id) => {
         return (
             <div className="col-sm-6">
-                {gameCard(game, index)}
+                {gameCard(game, id)}
             </div>
         )
     })

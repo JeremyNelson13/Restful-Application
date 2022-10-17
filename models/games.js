@@ -1,19 +1,14 @@
-module.exports = [
+const mongoose = require('mongoose')
+const gameSchema = new mongoose.Schema(
     {
-        title: 'DOOM',
-        genre: 'Horror, FPS',
-        platform: 'MS-DOS',
-        rating: 'M',
-        releaseDate: '1993',
-        boxArt:'http://placekitten.com/250/250'
-    },
-    {
-        title: 'Super Mario Sunshine',
-        genre: 'Third Person Platforming',
-        platform: 'Nintendo Gamecube',
-        rating: 'E',
-        releaseDate: '2001',
-        boxArt: 'http://placekitten.com/250/250'
-    },
-    
-]
+        title: {type: String, required: true},
+        genre: {type: String, required: false, default: 'Unknown Genre'},
+        platform: {type: String, required: true},
+        rating: {type: String, required: false, default: 'Unknown ESRB/CERO/PEGI rating'},
+        releaseDate: {type: Number, required: false, default: 'Unknown Release Date'},
+        boxArt: {type: String} 
+        
+    }
+)
+
+module.exports = mongoose.model('Game', gameSchema)
