@@ -27,7 +27,9 @@ router.get('/', (req, res) => {
 // })
 
 // Stub GET New route(create new form)
-// router.get('/index/addGame', (req, res) => {})
+router.get('/new', (req, res) => {
+    res.status(200).render('../views/addgame')
+})
 
 // Stub GET by ID route(detail view by id)
 // router.get('/index/:id', (req, res) => {})

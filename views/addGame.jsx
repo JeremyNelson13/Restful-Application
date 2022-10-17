@@ -1,15 +1,14 @@
 const React = require('react')
 const Def = require('./defaultView')
 
-function addGame () {
+function new_form () {
     return (
         <Def>
             <main>
-                <h1>This is the Add New Game stub.</h1>
-                <p>add form to create new game below</p>
+                <h1>Add Game</h1>
             </main>
         </Def>
     )
 }
 
-module.exports = addGame
+module.exports = new_form
