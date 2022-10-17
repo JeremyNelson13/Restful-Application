@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
     if (isNaN(id)) {
         res.render('errorPage')
     } else if(!games[id]) {
-        res.render('error404')
+        res.render('errorPage')
     } else {
         res.status(200).render('../views/showGame', {game: games[id]})
     }

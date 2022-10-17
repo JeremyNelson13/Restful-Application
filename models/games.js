@@ -14,5 +14,6 @@ module.exports = [
         rating: 'E',
         releaseDate: '2001',
         boxArt: 'http://placekitten.com/250/250'
-    }
+    },
+    
 ]

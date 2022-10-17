@@ -1,12 +1,16 @@
 const React = require('react')
 const Def = require('./defaultView')
 
-function showGame () {
+function showGame(data) {
     return (
         <Def>
             <main>
-                <h1>This is the Show Game stub.</h1>
-                <p>this page will show the data/comments for a single game</p>
+                <h1>{data.game.title}</h1>
+                <div><h3>{data.game.genre}</h3></div>
+                <div><h3>{data.game.platform}</h3></div>
+                <img src={data.game.boxArt} alt={data.game.title} />
+                <div><h3>{data.game.rating}</h3></div>
+                <div><h3>{data.game.releaseDate}</h3></div>
             </main>
         </Def>
     )
