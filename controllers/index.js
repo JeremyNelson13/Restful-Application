@@ -39,15 +39,18 @@ router.get('/:id', (req, res) => {
     } else if(!games[id]) {
         res.render('errorPage')
     } else {
-        res.status(200).render('../views/showGame', {game: games[id]})
+        res.status(200).render('../views/showGame', { game: games[id], id})
     }
 })
 
+// Stub GET edit route(edit form entry)
+router.get('/index/:id/edit', (req, res) => {
+    res.status(200).render('../views/editGame')
+})
 // Stub PUT by ID route(update entry by id)
 // router.put('/index/:id', (req, res) => {})
 
-// Stub GET edit route(edit form entry)
-// router.get('/index/:id/edit, (req, res) => {})
+
 
 // Stub DELETE route(delete by id)
 // router.delete('/index/:id', (req, res) => {})

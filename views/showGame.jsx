@@ -11,6 +11,12 @@ function showGame(data) {
                 <img src={data.game.boxArt} alt={data.game.title} />
                 <div><h3>{data.game.rating}</h3></div>
                 <div><h3>{data.game.releaseDate}</h3></div>
+                <a href={`/index/${data.id}/edit`} className='btn btn-warning'>Edit</a>
+                <form method='POST' action={`/index/${data.id}?_method=DELETE`}>
+                    <button type='submit' className='btn btn-danger'>
+                        Delete
+                    </button>
+                </form>
             </main>
         </Def>
     )
