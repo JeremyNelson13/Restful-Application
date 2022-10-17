@@ -6,14 +6,14 @@ router.get('/', (req, res) => {
         {
             title: 'DOOM',
             genre: 'Horror, FPS',
-            console: 'MS-DOS',
+            platform: 'MS-DOS',
             releaseDate: '1993',
             boxArt:'http://placekitten.com/250/250'
         },
         {
             title: 'Super Mario Sunshine',
             genre: 'Third Person Platforming',
-            console: 'Nintendo Gamecube',
+            platform: 'Nintendo Gamecube',
             releaseDate: '2001',
             boxArt: 'http://placekitten.com/250/250'
         }
@@ -22,13 +22,14 @@ router.get('/', (req, res) => {
 })
 
 // Stub POST route
-// router.get('/index', (req, res) => {
-
-// })
+router.post('/', (req, res) => {
+    console.log(req.body)
+    res.send('POST /index')
+})
 
 // Stub GET New route(create new form)
 router.get('/new', (req, res) => {
-    res.status(200).render('../views/addgame')
+    res.status(200).render('../views/addGame')
 })
 
 // Stub GET by ID route(detail view by id)
