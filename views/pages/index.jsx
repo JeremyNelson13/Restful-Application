@@ -4,7 +4,7 @@ const Def = require('../defaultView.jsx')
 function index(data) {
     const mappedGames = data.games.map((game) => {
         return (
-            <div className="games-map">
+            <div className="col-sm-6">
                 <div><h2>{game.title}</h2></div>
                 <img src={game.boxArt} alt={game.title} />
             </div>
@@ -14,7 +14,7 @@ function index(data) {
         <Def>
             <main>
                 <h1>Welcome to The Index Stub!</h1>
-                {mappedGames}
+                <div className='row'>{mappedGames}</div>
                 <a href="/">
                     <button className="btn-primary">Return to Landing</button>
                 </a>
