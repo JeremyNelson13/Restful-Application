@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
    })
 })
 
-// POST route
+// POST new game to db route
 router.post('/', (req, res) => {
     db.Game.create(req.body)
     .then(() => {
@@ -33,7 +33,15 @@ router.get('/new', (req, res) => {
 
 // GET by ID route(detail view by id)
 router.get('/:id', (req, res) => {
-    res.status(200).send('GET /games/:id STUB')
+    db.Game.findById(req.params.id)
+    .then(game => {
+       res.status(200).render('../views/showGame', {game}) 
+    })
+    .catch(err => {
+        console.log(err,'err')
+        res.status(404).render('errorPage')
+    })
+    
 })
 
 // PUT edit route(edit form entry)
