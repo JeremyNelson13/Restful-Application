@@ -2,10 +2,10 @@ const React = require('react')
 const Def = require('../defaultView.jsx')
 
 function index(data) {
-    const mappedGames = data.games.map((game) => {
+    const mappedGames = data.games.map((game, index) => {
         return (
             <div className="col-sm-6">
-                <div><h3>{game.title}</h3></div>
+                <div><h3><a href={`/index/${index}`}>{game.title}</a></h3></div>
                 <div><h3>{game.genre}</h3></div>
                 <div><h3>{game.platform}</h3></div>
                 

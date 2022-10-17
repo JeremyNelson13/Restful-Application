@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const e = require('express')
 const games = require('../models/games.js')
 
 // Index GET route
@@ -31,7 +32,16 @@ router.get('/new', (req, res) => {
 })
 
 // Stub GET by ID route(detail view by id)
-// router.get('/index/:id', (req, res) => {})
+router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('errorPage')
+    } else if(!games[id]) {
+        res.render('error404')
+    } else {
+        res.status(200).render('../views/showGame', {game: games[id]})
+    }
+})
 
 // Stub PUT by ID route(update entry by id)
 // router.put('/index/:id', (req, res) => {})
