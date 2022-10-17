@@ -8,8 +8,8 @@ function addGame () {
                 <h1>Add a Game</h1>
                 <form action="/index" method="POST">
                     <div className="form-group">
-                        <label htmlFor="title">Game Name</label>
-                        <input type="text" className="form-control" id="title" name="title" placeholder="Enter Game Name"/>
+                        <label htmlFor="title">Game Title</label>
+                        <input type="text" className="form-control" id="title" name="title" placeholder="Enter Game Name" required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="genre">Game Genre</label>
@@ -17,7 +17,7 @@ function addGame () {
                     </div>
                     <div className="form-group">
                         <label htmlFor="platform">Platform</label>
-                        <input type="text" className="form-control" id="platform" name="platform" placeholder="Enter Game Rating"/>
+                        <input type="text" className="form-control" id="platform" name="platform" placeholder="Enter Platform" required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="rating">Rating</label>

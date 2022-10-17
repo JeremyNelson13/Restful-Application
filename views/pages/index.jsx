@@ -5,8 +5,13 @@ function index(data) {
     const mappedGames = data.games.map((game) => {
         return (
             <div className="col-sm-6">
-                <div><h2>{game.title}</h2></div>
+                <div><h3>{game.title}</h3></div>
+                <div><h3>{game.genre}</h3></div>
+                <div><h3>{game.platform}</h3></div>
+                
                 <img src={game.boxArt} alt={game.title} />
+                <div><h3>{game.rating}</h3></div>
+                <div><h3>{game.releaseDate}</h3></div>
             </div>
         )
     })

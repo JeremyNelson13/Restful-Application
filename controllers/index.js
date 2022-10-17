@@ -1,30 +1,28 @@
 const router = require('express').Router()
+const games = require('../models/games.js')
 
 // Index GET route
 router.get('/', (req, res) => {
-    let games = [
-        {
-            title: 'DOOM',
-            genre: 'Horror, FPS',
-            platform: 'MS-DOS',
-            releaseDate: '1993',
-            boxArt:'http://placekitten.com/250/250'
-        },
-        {
-            title: 'Super Mario Sunshine',
-            genre: 'Third Person Platforming',
-            platform: 'Nintendo Gamecube',
-            releaseDate: '2001',
-            boxArt: 'http://placekitten.com/250/250'
-        }
-    ]
     res.status(200).render('pages/index', {games})
 })
 
 // Stub POST route
 router.post('/', (req, res) => {
-    console.log(req.body)
-    res.send('POST /index')
+    // title and platform are required. this if block will add
+    // default information if it is not given in the form.
+    if (!req.body.boxArt) {
+        //Default image
+        req.body.boxArt - 'http://placekitten.com/250/250'
+    } if (!req.body.genre) {
+        req.body.genre = 'Unknown Genre'
+    } if (!req.body.releaseDate) {
+        req.body.releaseDate = 'Unknown Date'
+    }
+    if (!req.body.rating) {
+        req.body.rating = 'Unknown ESRB/PEGI/CERO'
+    }
+    games.push(req.body)
+    res.status(200).redirect('/index')
 })
 
 // Stub GET New route(create new form)
