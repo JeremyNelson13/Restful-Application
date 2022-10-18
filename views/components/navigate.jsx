@@ -8,10 +8,10 @@ function navbar () {
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/index">Games Index</a>
+                    <a href="/games">Games Index</a>
                 </li>
                 <li>
-                    <a href="/index/new">Add Game</a>
+                    <a href="/games/new">Add Game</a>
                 </li>
             </ul>
         </nav>

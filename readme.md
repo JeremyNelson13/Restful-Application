@@ -1,7 +1,8 @@
 
 # Game-Rater
 This is a Restful application designed to allow users to do some basic 
-functions to data. It is based off of a project from my NCSU bootcamp called Rest-Rant. 
+functions to data. It is based off of a project from my NCSU bootcamp called Rest-Rant. This application can be used
+to track video games you like and leave reviews. 
 
 ## Technology used
 - Express 
@@ -35,3 +36,7 @@ functions to data. It is based off of a project from my NCSU bootcamp called Res
 | Console | string |
 | Release Date | string (for convenience's sake these will store as strings) |
 | Box Art | string(URL) |
+| Author | string, name of comment writer, defaults to anonymous |
+| rave | boolean, either negative or positive defaults to false |
+| stars | number, 1-5 star rating inc 0.5, required no default |
+| content | string, written content of comment, defaults to empty string |
