@@ -48,7 +48,7 @@ nav a:hover {
     padding: 0 20px;
 }
 .card {
-
+    text-align: left;
     background-color: white;
     margin: 20px;
     border-radius: 10px;

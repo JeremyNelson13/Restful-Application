@@ -49,6 +49,7 @@ router.get('/new', (req, res) => {
 // GET by ID route(detail view by id)
 router.get('/:id', (req, res) => {
     db.Game.findById(req.params.id)
+        .populate('comments')
         .then(game => {
             res.status(200).render('../views/showGame', { game })
         })
@@ -59,24 +60,65 @@ router.get('/:id', (req, res) => {
 
 })
 
+// EDIT route for form
+router.get('/:id/edit', (req, res) => {
+    db.Game.findById(req.params.id)
+    .then(game => {
+        res.render('../views/editGame', {game})
+    })
+    .catch(err => {
+        res.render('errorPage')
+    })
+})
+
 // PUT edit route(edit form entry)
 router.put('/:id', (req, res) => {
-    res.status(200).send('PUT /games/:id stub')
+    db.Game.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+        res.redirect(`/games/${req.params.id}`)
+    })
+    .catch(err => {
+        console.log(err, 'err')
+        res.render('errorPage')
+    })
 })
+
 
 // DELETE route(delete by id)
 router.delete('/:id', (req, res) => {
-    res.status(200).send('DELETE /games/:id stub')
+    db.Game.findByIdAndDelete(req.params.id)
+    .then(game => {
+        res.status(200).redirect('/games')
+    })
+    .catch(err => {
+        console.log(err, 'err')
+        res.render('errorPage')
+    })
 })
 
-// EDIT route for form
-router.get('/:id/edit', (req, res) => {
-    res.status(200).send('GET edit form stub')
-})
 
 // COMMENT ROUTES
 router.post('/:id/comment', (req, res) => {
-    res.status(200).send('GET /games/:id/comment stub')
+    console.log(req.body)
+    req.body.rave = req.body.rave ? true : false
+    db.Game.findById(req.params.id)
+    .then(game =>{
+        db.Comment.create(req.body)
+        .then(comment => {
+            game.comments.push(comment.id)
+            game.save()
+            .then(()=>{
+                res.redirect(`/games/${req.params.id}`)
+            })
+
+        })
+        .catch(err => {
+            res.render('errorPage')
+        })
+    })
+    .catch(err => {
+        res.render('errorPage')
+    })
 })
 
 // DELETE route(delete comment by id)

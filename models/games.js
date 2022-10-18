@@ -27,8 +27,12 @@ const gameSchema = new mongoose.Schema(
         {
             type: Number,
             required: false,
-            
-            min: [1975]
+            //below lines causing error with seeder. will comment out while testing. may not matter in final
+            // build. error was to do with casting of the strings in this section. will research.
+            // default: 'Unknown Release Date',
+            // min: [1975, ' This is a good time to plan a museum trip'],
+
+            // max: [new Date().getFullYear, ' That one isn`t out yet']
         },
         boxArt:
         {
