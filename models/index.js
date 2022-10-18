@@ -9,3 +9,4 @@ mongoose.connect(process.env.MONGO_URI, {
     .catch((err)=> console.log(err))
 
 module.exports.Game = require('./games')
+module.exports.Comment = require('./comment')

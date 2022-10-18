@@ -1,11 +1,19 @@
 const React = require('react')
 const Def = require('./defaultView')
 
-function addGame () {
+function addGame (data) {
+    // defines error message for backend validation
+    let message = ''
+    if (data.message) {
+        message = (
+            <h4 className='alert alert-danger'>{data.message}</h4>
+        )
+    }
     return (
         <Def>
             <main>
                 <h1>Add a Game</h1>
+                {message}
                 <form action="/games" method="POST">
                     <div className="form-group">
                         <label htmlFor="title">Game Title</label>
