@@ -123,7 +123,13 @@ router.post('/:id/comment', (req, res) => {
 
 // DELETE route(delete comment by id)
 router.delete('/:id/comment/:commentId', (req, res) => {
-    res.status(200).send('GET /games/:id/comment/:commentId stub')
+    db.Comment.findByIdAndDelete(req.params.commentId)
+    .then(() => {
+        res.status(200).redirect(`/games/${req.params.id}`)
+    })
+    .catch(err => {
+        res.status(400).redirect('errorPage')
+    })
 })
 
 // Wildcard and Homepage routes are in server index with rendering and middlewares.
