@@ -2,7 +2,7 @@
 # Game-Rater
 This is a Restful application designed to allow users to do some basic 
 functions to data. It is based off of a project from my NCSU bootcamp called Rest-Rant. This application can be used
-to track video games you like and leave reviews. 
+to track video games you like and leave reviews. **It is currently not deployed, as it is being used as a base to learn other frameworks**. As these are finished I will add links to their specific repositories or deployments here, to allow people to check different implementations of this concept in different tech stacks.
 
 ## Technology used
 - Express 
